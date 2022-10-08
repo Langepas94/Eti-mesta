@@ -256,15 +256,30 @@
                                     <action selector="closeVC:" destination="2T2-oY-kZM" eventType="touchUpInside" id="TKm-Rf-cyK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEp-gv-ScS">
+                                <rect key="frame" x="324" y="748" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="J1y-WR-GOW"/>
+                                    <constraint firstAttribute="height" constant="50" id="J4V-9C-U08"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="mappin.and.ellipse" catalog="system"/>
+                                <connections>
+                                    <action selector="centerOnUserLocation" destination="2T2-oY-kZM" eventType="touchUpInside" id="1nm-Us-oAj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zSD-MA-XrH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Z67-OY-Oxe" firstAttribute="trailing" secondItem="zSD-MA-XrH" secondAttribute="trailing" id="1z4-LK-kC3"/>
+                            <constraint firstItem="zSD-MA-XrH" firstAttribute="bottom" secondItem="mEp-gv-ScS" secondAttribute="bottom" constant="40" id="6Ym-6e-ooE"/>
                             <constraint firstAttribute="bottom" secondItem="Z67-OY-Oxe" secondAttribute="bottom" id="C3T-8g-mvw"/>
                             <constraint firstItem="PZL-QV-LnB" firstAttribute="top" secondItem="zSD-MA-XrH" secondAttribute="top" constant="40" id="G5p-4J-hA3"/>
                             <constraint firstItem="Z67-OY-Oxe" firstAttribute="top" secondItem="2gI-Z8-yDk" secondAttribute="top" id="HlZ-BM-FRu"/>
                             <constraint firstItem="Z67-OY-Oxe" firstAttribute="leading" secondItem="zSD-MA-XrH" secondAttribute="leading" id="YHi-Y1-vFf"/>
+                            <constraint firstItem="zSD-MA-XrH" firstAttribute="trailing" secondItem="mEp-gv-ScS" secondAttribute="trailing" constant="40" id="hyJ-qw-OwL"/>
                             <constraint firstItem="zSD-MA-XrH" firstAttribute="trailing" secondItem="PZL-QV-LnB" secondAttribute="trailing" constant="40" id="wp5-qI-mhJ"/>
                         </constraints>
                     </view>
@@ -476,7 +491,11 @@
         <image name="5060443" width="256" height="256"/>
         <image name="AZ" width="25" height="24"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
+        <image name="mappin.and.ellipse" catalog="system" width="117" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

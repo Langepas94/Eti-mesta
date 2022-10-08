@@ -13,15 +13,23 @@ class MapVCViewController: UIViewController {
     let annotationViewIdentifier = "annotationViewIdentifier"
     var place = Place()
     let locationManager = CLLocationManager()
+    let regioeters = 10_000
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         setupPlaceMark()
-        checkLoc()
+        checkLocServ()
     }
     
+    @IBAction func centerOnUserLocation() {
+        if let location = locationManager.location?.coordinate {
+            let region  = MKCoordinateRegion(center: location, latitudinalMeters: regioeters, longitudinalMeters: regioeters)
+            mapView.setRegion(region, animated: true)
+        }
+        
+    }
     @IBAction func closeVC(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -59,18 +67,20 @@ class MapVCViewController: UIViewController {
 //        }
 //    }
     
-    private func checkLoc() {
+    private func checkLocServ() {
                 if CLLocationManager.locationServicesEnabled() {
                     setupLocationManager()
                     checkLocationAuth()
                 } else {
-                    // show alert
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.showAlert(title: "Location are disabled", message: "Enable it in geo privacy")
+                    }
                 }
     }
     
     private func setupLocationManager() {
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = .greatestFiniteMagnitude
       
     }
     
@@ -80,19 +90,28 @@ class MapVCViewController: UIViewController {
             mapView.showsUserLocation = true
             break
         case .denied:
-            // alert here
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(title: "Location are disabled", message: "Enable it in geo privacy")
+            }
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
             break
         case .restricted:
-            // alert here
             break
         case .authorizedAlways:
             break
         @unknown default:
             print("new case is available")
         }
+    }
+    
+    private func showAlert(title: String, message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 
 }

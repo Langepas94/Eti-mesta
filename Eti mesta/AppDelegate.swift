@@ -1,19 +1,30 @@
 //
 //  AppDelegate.swift
-//  Eti mesta
+//  My Places (with comments)
 //
-//  Created by Артём Тюрморезов on 07.10.2022.
+//  Created by Артём Тюрморезов on 01.10.2022.
 //
 
 import UIKit
-
+import RealmSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let schemaVersion: UInt64 = 2
+        let config = Realm.Configuration(
+            schemaVersion: schemaVersion,
+            migrationBlock: { migration, oldSchemaVersion in
+                if oldSchemaVersion < schemaVersion {
+                    // Rename the "age" property to "yearsSinceBirth".
+                    // The renaming operation should be done outside of calls to `enumerateObjects(ofType: _:)`.
+                    
+                }
+            })
+        Realm.Configuration.defaultConfiguration = config
         return true
     }
 

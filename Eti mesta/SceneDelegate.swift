@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Eti mesta
+//  My Places (with comments)
 //
-//  Created by Артём Тюрморезов on 07.10.2022.
+//  Created by Артём Тюрморезов on 01.10.2022.
 //
 
 import UIKit

@@ -19,7 +19,7 @@ class MapVCViewController: UIViewController {
         super.viewDidLoad()
         mapView.delegate = self
         setupPlaceMark()
-       
+        checkLoc()
     }
     
     @IBAction func closeVC(_ sender: Any) {
@@ -50,17 +50,28 @@ class MapVCViewController: UIViewController {
         }
     }
     
-    private func сheckLocationServices() {
-        if CLLocationManager.locationServicesEnabled() {
-            setupLocationManager()
-            checkLocationAuth()
-        } else {
-            
-        }
+//    private func сheckLocationServices() {
+//        if CLLocationManager.locationServicesEnabled() {
+//            setupLocationManager()
+//            checkLocationAuth()
+//        } else {
+//            // show alert
+//        }
+//    }
+    
+    private func checkLoc() {
+                if CLLocationManager.locationServicesEnabled() {
+                    setupLocationManager()
+                    checkLocationAuth()
+                } else {
+                    // show alert
+                }
     }
     
     private func setupLocationManager() {
+        locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+      
     }
     
     private func checkLocationAuth() {
@@ -109,3 +120,8 @@ extension MapVCViewController: MKMapViewDelegate {
 }
 
 
+extension MapVCViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuth()
+    }
+}

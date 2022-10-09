@@ -17,6 +17,9 @@ class MapVCViewController: UIViewController {
     var segueId = ""
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapPinImg: UIImageView!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    
     
     
     override func viewDidLoad() {
@@ -39,10 +42,18 @@ class MapVCViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    
+    @IBAction func doneButtontapped() {
+    }
+    
+    
     private func setupMapView() {
         if segueId == "showMap" {
             setupPlaceMark()
             mapPinImg.isHidden = true
+            addressLabel.isHidden = true
+            doneButton.isHidden = true
+            addressLabel.text = ""
         }
     }
     
@@ -129,6 +140,13 @@ class MapVCViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    private func getCenterLocation(for mapview: MKMapView) -> CLLocation {
+        let latitude = mapview.centerCoordinate.latitude
+        let longitude = mapview.centerCoordinate.longitude
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
     private func showUserLocation() {
                 if let location = locationManager.location?.coordinate {
                     let region  = MKCoordinateRegion(center: location, latitudinalMeters: regioeters, longitudinalMeters: regioeters)
@@ -157,6 +175,35 @@ extension MapVCViewController: MKMapViewDelegate {
             annotationView?.rightCalloutAccessoryView = imageForBanner
         }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = getCenterLocation(for: mapView)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(center) { placemarks, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let placemarks = placemarks else { return }
+            
+            let placemark = placemarks.first
+            let streetName = placemark?.thoroughfare
+            let buildNumber = placemark?.subThoroughfare
+            
+            DispatchQueue.main.async {
+                if streetName != nil, buildNumber != nil {
+                    self.addressLabel.text = "\(streetName!), \(buildNumber!)"
+                } else if streetName != nil {
+                    self.addressLabel.text = "\(streetName!)"
+                } else {
+                    self.addressLabel.text = ""
+                }
+            }
+            
+        }
     }
 }
 

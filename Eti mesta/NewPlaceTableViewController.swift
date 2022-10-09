@@ -102,16 +102,20 @@ class NewPlaceTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier != "showMap" {
-            return
-        }else {
-            let mapVC = segue.destination as! MapVCViewController
+        
+        guard let id = segue.identifier, let mapVC = segue.destination as? MapVCViewController else { return }
+        
+        mapVC.segueId = id
+        
+        if id == "showMap" {
+            
             mapVC.place.name = placeName.text!
             mapVC.place.location = placeLocation.text
             mapVC.place.type = placeLocation.text
             mapVC.place.imageData = placeImage.image?.pngData()
         }
     }
+    
     
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true)

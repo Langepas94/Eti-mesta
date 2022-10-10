@@ -23,6 +23,7 @@
 		44070E1528F04E390054FA99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44070E0828F04E390054FA99 /* Assets.xcassets */; };
 		44A34CE128F0695200370B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A34CDF28F0695200370B37 /* LaunchScreen.storyboard */; };
 		44A34CE228F0695200370B37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44A34CE028F0695200370B37 /* Main.storyboard */; };
+		44CF509728F462E200356D87 /* mapManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF509628F462E200356D87 /* mapManage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		44A34CDC28F0684B00370B37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44A34CDF28F0695200370B37 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44A34CE028F0695200370B37 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		44CF509628F462E200356D87 /* mapManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapManage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				44070DFF28F04E380054FA99 /* CustomTableCell.swift */,
 				44070E0328F04E380054FA99 /* MainTableViewController.swift */,
 				44070E0428F04E380054FA99 /* MapVCViewController.swift */,
+				44CF509628F462E200356D87 /* mapManage.swift */,
 				44070E0028F04E380054FA99 /* NewPlaceTableViewController.swift */,
 				44070E0628F04E390054FA99 /* PlaceModel.swift */,
 				44070E0228F04E380054FA99 /* RatingControl.swift */,
@@ -185,6 +188,7 @@
 				44070E0C28F04E390054FA99 /* CustomTableCell.swift in Sources */,
 				44070E1328F04E390054FA99 /* PlaceModel.swift in Sources */,
 				44070E1028F04E390054FA99 /* MainTableViewController.swift in Sources */,
+				44CF509728F462E200356D87 /* mapManage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

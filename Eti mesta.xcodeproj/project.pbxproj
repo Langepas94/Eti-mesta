@@ -95,8 +95,8 @@
 			children = (
 				44070E0328F04E380054FA99 /* MainTableViewController.swift */,
 				44070E0428F04E380054FA99 /* MapVCViewController.swift */,
-				44070E0028F04E380054FA99 /* NewPlaceTableViewController.swift */,
 				44070DFF28F04E380054FA99 /* CustomTableCell.swift */,
+				44070E0028F04E380054FA99 /* NewPlaceTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

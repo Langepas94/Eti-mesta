@@ -78,7 +78,9 @@ class MapVCViewController: UIViewController {
     private func setupMapView() {
         
         goButton.isHidden = true
-        
+        mapManage.checkLocServ(mapView: mapView, segueId: segueId) {
+            mapManage.locationManager.delegate = self
+        }
         if segueId == "showMap" {
             mapManage.setupPlaceMark(place: place, mapView: mapView)
             mapPinImg.isHidden = true

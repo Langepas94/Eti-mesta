@@ -32,13 +32,13 @@ import Cosmos
         setupTitleOfNavigationController()
         places = realm.objects(Place.self)
         
-        
+    
 ////         MARK: - setup searchcontroller
 //        searchController.searchResultsUpdater = self
 //        searchController.obscuresBackgroundDuringPresentation = false
 //        searchController.searchBar.placeholder = "Поиск"
 //
-////        navigationItem.searchController = searchController
+//        navigationItem.searchController = searchController
 //
 //        definesPresentationContext = true
     }

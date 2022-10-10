@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -298,14 +299,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNy-RN-Ho6">
-                                <rect key="frame" x="160.5" y="748" width="93.5" height="50"/>
+                                <rect key="frame" x="165" y="752.5" width="84" height="45.5"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Done">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="26"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="doneButtontapped" destination="2T2-oY-kZM" eventType="touchUpInside" id="fpX-Pe-5H4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbv-rj-1d1">
+                                <rect key="frame" x="182" y="748" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="p1u-K1-3f9"/>
+                                    <constraint firstAttribute="height" constant="50" id="uqm-zP-qfe"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="arrow.right.circle.fill" catalog="system" symbolScale="large" variableValue="1"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="large"/>
+                                    <attributedString key="attributedTitle"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goButtonTapped" destination="2T2-oY-kZM" eventType="touchUpInside" id="YIu-Sj-3M7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -326,12 +344,15 @@
                             <constraint firstItem="zSD-MA-XrH" firstAttribute="trailing" secondItem="mEp-gv-ScS" secondAttribute="trailing" constant="40" id="hyJ-qw-OwL"/>
                             <constraint firstItem="Z67-OY-Oxe" firstAttribute="top" secondItem="MLc-S8-agx" secondAttribute="bottom" constant="-206" id="l0A-yH-e3U"/>
                             <constraint firstItem="MLc-S8-agx" firstAttribute="leading" secondItem="zSD-MA-XrH" secondAttribute="leading" constant="20" id="tLg-or-wOh"/>
+                            <constraint firstItem="jbv-rj-1d1" firstAttribute="centerX" secondItem="2gI-Z8-yDk" secondAttribute="centerX" id="tQu-sJ-pbU"/>
                             <constraint firstItem="zSD-MA-XrH" firstAttribute="trailing" secondItem="PZL-QV-LnB" secondAttribute="trailing" constant="40" id="wp5-qI-mhJ"/>
+                            <constraint firstItem="zSD-MA-XrH" firstAttribute="bottom" secondItem="jbv-rj-1d1" secondAttribute="bottom" constant="40" id="zAi-Yu-66f"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="MLc-S8-agx" id="7n3-sW-btY"/>
                         <outlet property="doneButton" destination="KNy-RN-Ho6" id="7gs-CJ-GKW"/>
+                        <outlet property="goButton" destination="jbv-rj-1d1" id="evI-Qr-dDe"/>
                         <outlet property="mapPinImg" destination="LLF-xX-pJ2" id="IHG-hU-nwf"/>
                         <outlet property="mapView" destination="Z67-OY-Oxe" id="LnR-gr-ybY"/>
                     </connections>
@@ -540,6 +561,7 @@
     <resources>
         <image name="5060443" width="256" height="256"/>
         <image name="AZ" width="25" height="24"/>
+        <image name="arrow.right.circle.fill" catalog="system" width="128" height="123"/>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="mappin" catalog="system" width="106" height="128"/>

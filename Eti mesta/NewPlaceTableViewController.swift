@@ -106,7 +106,7 @@ class NewPlaceTableViewController: UITableViewController {
         guard let id = segue.identifier, let mapVC = segue.destination as? MapVCViewController else { return }
         
         mapVC.segueId = id
-        
+        mapVC.mapVcDelegate = self
         if id == "showMap" {
             
             mapVC.place.name = placeName.text!
@@ -199,3 +199,9 @@ extension NewPlaceTableViewController {
 }
 
 
+extension NewPlaceTableViewController: MapVcDelegate {
+    
+    func getAddress(_ address: String?) {
+        placeLocation.text = address
+    }
+}

@@ -78,23 +78,55 @@
 		44070DDF28F04D840054FA99 /* Eti mesta */ = {
 			isa = PBXGroup;
 			children = (
+				44CF509B28F4757C00356D87 /* Support Files */,
+				44CF509A28F4755E00356D87 /* Helpers */,
+				44CF509928F4755400356D87 /* Models */,
+				44CF509828F4752200356D87 /* ViewControllers */,
 				44A34CDF28F0695200370B37 /* LaunchScreen.storyboard */,
 				44A34CE028F0695200370B37 /* Main.storyboard */,
-				44A34CDC28F0684B00370B37 /* Info.plist */,
-				44070E0128F04E380054FA99 /* AppDelegate.swift */,
-				44070E0828F04E390054FA99 /* Assets.xcassets */,
-				44070DFF28F04E380054FA99 /* CustomTableCell.swift */,
-				44070E0328F04E380054FA99 /* MainTableViewController.swift */,
-				44070E0428F04E380054FA99 /* MapVCViewController.swift */,
-				44CF509628F462E200356D87 /* mapManage.swift */,
-				44070E0028F04E380054FA99 /* NewPlaceTableViewController.swift */,
-				44070E0628F04E390054FA99 /* PlaceModel.swift */,
-				44070E0228F04E380054FA99 /* RatingControl.swift */,
-				44070E0728F04E390054FA99 /* SceneDelegate.swift */,
-				44070DFD28F04E370054FA99 /* StorageManager.swift */,
 				44070DFE28F04E380054FA99 /* ViewController.swift */,
+				44A34CDC28F0684B00370B37 /* Info.plist */,
 			);
 			path = "Eti mesta";
+			sourceTree = "<group>";
+		};
+		44CF509828F4752200356D87 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				44070E0328F04E380054FA99 /* MainTableViewController.swift */,
+				44070E0428F04E380054FA99 /* MapVCViewController.swift */,
+				44070E0028F04E380054FA99 /* NewPlaceTableViewController.swift */,
+				44070DFF28F04E380054FA99 /* CustomTableCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		44CF509928F4755400356D87 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44070E0628F04E390054FA99 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		44CF509A28F4755E00356D87 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				44CF509628F462E200356D87 /* mapManage.swift */,
+				44070E0228F04E380054FA99 /* RatingControl.swift */,
+				44070DFD28F04E370054FA99 /* StorageManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		44CF509B28F4757C00356D87 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				44070E0128F04E380054FA99 /* AppDelegate.swift */,
+				44070E0828F04E390054FA99 /* Assets.xcassets */,
+				44070E0728F04E390054FA99 /* SceneDelegate.swift */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -299,6 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

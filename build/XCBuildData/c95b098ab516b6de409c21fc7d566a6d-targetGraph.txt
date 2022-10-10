@@ -1,0 +1,26 @@
+Target dependency graph (10 targets)
+Cosmos in Cosmos, no dependencies
+Cosmos in Cosmos, depends on:
+Cosmos in Cosmos (explicit)
+Bid in RealmDatabase, no dependencies
+RealmCore in RealmDatabase, depends on:
+Bid in RealmDatabase (explicit)
+RealmCore in RealmDatabase, depends on:
+RealmCore in RealmDatabase (explicit)
+Bid in RealmDatabase (explicit)
+Realm in Realm, depends on:
+RealmCore in RealmDatabase (explicit)
+RealmSwift in Realm, depends on:
+Realm in Realm (explicit)
+RealmCore in RealmDatabase (explicit)
+RealmSwift in Realm, depends on:
+Realm in Realm (explicit)
+RealmSwift in Realm (explicit)
+RealmCore in RealmDatabase (explicit)
+Realm in Realm, depends on:
+Realm in Realm (explicit)
+RealmCore in RealmDatabase (explicit)
+Eti mesta in Eti mesta, depends on:
+Cosmos in Cosmos (explicit)
+RealmSwift in Realm (explicit)
+Realm in Realm (explicit)

@@ -23,7 +23,8 @@ class NewPlaceTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        let name = "Artem"
+        let age = 28
         // тут настройка футера чтобы убрать нижнюю полосу
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
